@@ -5,7 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] float speed = 9.5f;
+
     [SerializeField] Camera camera;
+
+    [SerializeField] GameObject bulletPrefabs;
+
+    [SerializeField] GameObject bulletSpawnPoint;
 
     void Update()
     {
@@ -14,8 +19,16 @@ public class Player : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Shoot");
+            //Instantiate();
+
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            //Instantiate();
+
+        }
+
     }
 
     void Turn()
