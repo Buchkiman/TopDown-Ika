@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
-            //Instantiate();
+            Instantiate(bulletPrefabs, bulletSpawnPoint.transform.position, transform.rotation);
 
         }
 
