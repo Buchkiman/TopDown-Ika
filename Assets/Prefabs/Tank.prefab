@@ -384,4 +384,5 @@ MonoBehaviour:
   speed: 9.5
   camera: {fileID: 0}
   bulletPrefabs: {fileID: 6937020884271944932, guid: 0ff3febc82d90294284bd05c524077f9, type: 3}
+  ghostBullet: {fileID: 5737441734607392813, guid: 92ee10e3a7565f84dbc61eeb89ca26ed, type: 3}
   bulletSpawnPoint: {fileID: 5047919436607930615}

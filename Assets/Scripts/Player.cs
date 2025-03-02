@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] GameObject bulletPrefabs;
 
+    [SerializeField] GameObject ghostBullet;
+
     [SerializeField] GameObject bulletSpawnPoint;
 
     void Update()
@@ -25,7 +27,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            //Instantiate();
+            Instantiate(ghostBullet, bulletSpawnPoint.transform.position, transform.rotation);
 
         }
 
