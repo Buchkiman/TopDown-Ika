@@ -9,12 +9,18 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         hitCount -= 1;
-        Destroy(col.gameObject);
+
+        //Destroy(col.gameObject);
+
         if (hitCount == 0)
         {
             Destroy(gameObject);
         }
 
+        void OnCollisionEnter3D(Collision2D col)
+        {
+            Destroy(col.gameObject);
+        }
         
     }
 }
