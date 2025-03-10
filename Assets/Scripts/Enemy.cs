@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     {
         hitCount -= 1;
 
-        //Destroy(col.gameObject);
+        Destroy(col.gameObject);
 
         if (hitCount == 0)
         {
