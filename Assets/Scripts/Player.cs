@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
         Turn();
 
         bulletFireRate -= Time.deltaTime;
+        ghostBulletFireRate -= Time.deltaTime;
 
         if (bulletFireRate <= 0 && Input.GetMouseButtonDown(0))
         {
@@ -41,7 +42,7 @@ public class Player : MonoBehaviour
 
        
 
-        if (Input.GetMouseButtonDown(1))
+        if (ghostBulletFireRate <= 0 && Input.GetMouseButtonDown(1))
         {
             Instantiate(ghostBullet, bulletSpawnPoint.transform.position, transform.rotation);
             bulletFireRate = ghostBulletFireRate;
