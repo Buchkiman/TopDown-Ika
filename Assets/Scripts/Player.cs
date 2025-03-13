@@ -14,13 +14,16 @@ public class Player : MonoBehaviour
 
     [SerializeField] GameObject bulletSpawnPoint;
 
-    [SerializeField] float bulletFireRateDefault = 2f;
+    [SerializeField] float bulletFireRateDefault = 1f;
+
+    [SerializeField] float ghostBulletFireRate = 2f;
 
     float bulletFireRate;
 
     private void Start()
     {
         bulletFireRate = bulletFireRateDefault;
+        ghostBulletFireRate = ghostBulletFireRate;
     }
 
     void Update()
@@ -41,7 +44,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             Instantiate(ghostBullet, bulletSpawnPoint.transform.position, transform.rotation);
-
+            bulletFireRate = ghostBulletFireRate;
         }
 
     }
