@@ -6,21 +6,21 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] int hitCount = 5;
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         hitCount -= 1;
 
-        Destroy(col.gameObject);
+
+        if(collider.name == "Bullet(Clone)")
+        {
+            Destroy(collider.gameObject);
+        }
 
         if (hitCount == 0)
         {
             Destroy(gameObject);
         }
 
-        void OnCollisionEnter3D(Collision2D col)
-        {
-            Destroy(col.gameObject);
-        }
         
     }
 }
