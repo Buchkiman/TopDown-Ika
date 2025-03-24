@@ -5,16 +5,16 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 
-    float spawnRate = 3f;
+    float spawnRate = 2.5f;
 
     void Update()
     {
-        spawnRate -= 0.1f;
+        spawnRate -= 1f * Time.deltaTime;
 
-        if (spawnRate == 0)
+        if (spawnRate <= 0)
         {
-            Debug.Log(spawnRate);
-            return;
+            Debug.Log("enemy spawned");
+            spawnRate = 2.5f;
         }
 
 
