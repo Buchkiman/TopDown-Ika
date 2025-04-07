@@ -4,26 +4,16 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField]float health;
+    [SerializeField] int health = 100;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        health -= 10;
-        Debug.Log(health);
+        health -= 50;
 
-
-        Bullet bullet = collision.GetComponent<Bullet>();
-        Debug.Log(collision.name);
-
-        if(bullet)
+        if (health <= 0)
         {
-            health -= bullet.GetlDamage();
+            Destroy(gameObject);
         }
-
-            //if (health <= 0)
-            //{
-            //    Destroy(gameObject);
-            //}
-
     }
+
 }
