@@ -8,7 +8,13 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        health -= 50;
+
+        Bullet bullet = collision.GetComponent<Bullet>();
+
+        if(bullet)
+        {
+            health -= bullet.GetlDamage();
+        }
 
         if (health <= 0)
         {
