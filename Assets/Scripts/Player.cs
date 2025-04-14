@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] float speed = 9.5f;
 
     [SerializeField] Camera camera;
+    [SerializeField] private int health;
 
     [SerializeField] GameObject bulletPrefabs;
 
@@ -51,6 +52,7 @@ public class Player : MonoBehaviour
 
     }
 
+
     void Turn()
     {
         Vector2 mouseWorldPosition = camera.ScreenToWorldPoint(Input.mousePosition);
@@ -68,8 +70,17 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Enemy enemy = collision.GetComponent<Enemy>();
         
-        Debug.Log();
+        if(enemy)
+        {
+            health -= enemy.GetDamage();
+        }
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

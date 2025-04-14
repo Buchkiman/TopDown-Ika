@@ -6,7 +6,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    [SerializeField]float speed = 2f;
+    [SerializeField] float speed = 2f;
+    [SerializeField] int damage = 100;
     Transform player;
 
     void Start()
@@ -23,5 +24,11 @@ public class Enemy : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
+
  
+    public int GetDamage()
+    {
+        return damage;
+    }
+
 }
