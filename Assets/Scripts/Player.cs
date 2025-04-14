@@ -65,4 +65,11 @@ public class Player : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         transform.position = transform.position + new Vector3(horizontal, vertical) * Time.deltaTime * speed;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        Debug.Log();
+    }
+
 }

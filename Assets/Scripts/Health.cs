@@ -13,7 +13,7 @@ public class Health : MonoBehaviour
 
         if(bullet)
         {
-            health -= bullet.GetlDamage();
+            health -= bullet.GetDamage();
         }
 
         if (health <= 0)

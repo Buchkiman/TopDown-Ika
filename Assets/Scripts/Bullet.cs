@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 1.5f);
     }
 
-    public int GetlDamage()
+    public int GetDamage()
     {
         return damage;
     }
