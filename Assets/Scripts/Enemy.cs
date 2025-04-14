@@ -1,26 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] int hitCount = 10;
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    [SerializeField]float speed = 2f;
+    Transform player;
+
+    void Start()
     {
-        hitCount -= 1;
 
+        player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        if(collider.name == "Bullet(Clone)")
-        {
-            Destroy(collider.gameObject);
-        }
-
-        if (hitCount == 0)
-        {
-            Destroy(gameObject);
-        }
-
-        
     }
+    void Update()
+    {
+
+        Vector3 direction = (player.position - transform.position).normalized;
+        transform.position += direction * speed * Time.deltaTime;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+    }
+ 
 }
