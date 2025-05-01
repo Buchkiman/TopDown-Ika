@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] int health = 100;
+    Score score;
+    private void Start()
+    {
+        score = GameObject.FindWithTag("Score").GetComponent<Score>();
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
