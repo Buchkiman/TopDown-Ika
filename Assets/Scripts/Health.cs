@@ -7,9 +7,11 @@ public class Health : MonoBehaviour
 {
     [SerializeField] int health = 100;
     Score score;
+
+
     private void Start()
     {
-        score = GameObject.FindWithTag("Score").GetComponent<Score>();
+        score = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<Score>();
     }
 
 
@@ -26,6 +28,7 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            score.IncreasPoints();
         }
     }
 

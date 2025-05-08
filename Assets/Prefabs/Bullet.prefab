@@ -133,6 +133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4897568952263750085}
   bulletspeed: 20
+  damage: 10
+  destroyOnContact: 1
 --- !u!61 &7102754246695897933
 BoxCollider2D:
   m_ObjectHideFlags: 0

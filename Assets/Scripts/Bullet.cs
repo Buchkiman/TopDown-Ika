@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float bulletspeed = 20f;
     [SerializeField] int damage = 10;
+    [SerializeField] bool destroyOnContact;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +19,13 @@ public class Bullet : MonoBehaviour
     public int GetDamage()
     {
         return damage;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(destroyOnContact)
+        {
+            Destroy(gameObject);
+        }
     }
 }
