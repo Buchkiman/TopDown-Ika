@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] float ghostBulletFireRateDefault = 2f;
 
+    [SerializeField] SceneLoader sceneLoader;
+
     float bulletFireRate;
     float ghostBulletFireRate;
 
@@ -80,6 +82,7 @@ public class Player : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
+            sceneLoader.LoadGameOverUI();
         }
     }
 
