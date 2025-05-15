@@ -14,10 +14,16 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("");
+    }
 
     public void LoadGameOverUI()
     {
         gameUI.SetActive(false);
         gameOverUI.SetActive(true);
     }
+
+
 }
