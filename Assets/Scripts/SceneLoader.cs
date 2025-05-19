@@ -16,7 +16,12 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void LoadGameOverUI()
@@ -25,5 +30,5 @@ public class SceneLoader : MonoBehaviour
         gameOverUI.SetActive(true);
     }
 
-
+ 
 }
