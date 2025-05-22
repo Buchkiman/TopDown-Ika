@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] SceneLoader sceneLoader;
 
+    [SerializeField] AudioSource audioSource;
+
     float bulletFireRate;
     float ghostBulletFireRate;
 
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour
 
         if (bulletFireRate <= 0 && Input.GetMouseButtonDown(0))
         {
+            audioSource.PlayOneShot(audioSource.clip);
             Instantiate(bulletPrefabs, bulletSpawnPoint.transform.position, transform.rotation);
             bulletFireRate = bulletFireRateDefault;
         }
