@@ -6,8 +6,13 @@ public class EnemySpawner : MonoBehaviour
 {
 
     [SerializeField] GameObject enemyPrefab;
-    float spawnRate = 2.5f;
+    [SerializeField] float initialSpawnRate;
+    float spawnRate;
 
+    private void Start()
+    {
+        spawnRate = initialSpawnRate;
+    }
     void Update()
     {
         spawnRate -= 1f * Time.deltaTime;
@@ -15,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
         if (spawnRate <= 0)
         {
             Instantiate(enemyPrefab, transform.position, transform.rotation);
-            spawnRate = 2.5f;
+            spawnRate = initialSpawnRate;
         }
 
 
