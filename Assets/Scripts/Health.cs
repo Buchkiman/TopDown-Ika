@@ -6,6 +6,8 @@ using UnityEngine.SocialPlatforms.Impl;
 public class Health : MonoBehaviour
 {
     [SerializeField] int health = 100;
+    [SerializeField] AudioClip destroyAudio;
+    [SerializeField] AudioSource audioSource;
     Score score;
 
 
@@ -27,9 +29,11 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             score.IncreasPoints();
+            audioSource.PlayOneShot(destroyAudio);
         }
     }
+
 
 }
