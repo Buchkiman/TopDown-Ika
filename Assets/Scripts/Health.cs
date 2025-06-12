@@ -9,7 +9,10 @@ public class Health : MonoBehaviour
     [SerializeField] AudioClip destroyAudio;
     [SerializeField] AudioSource audioSource;
     [SerializeField] Enemy enemy;
-    Score score;
+    [SerializeField] BoxCollider2D boxCollider2D;
+    [SerializeField] SpriteRenderer spriteRendererBody;
+    [SerializeField] SpriteRenderer spriteRendererTurret;
+    Score score; 
 
 
     private void Start()
@@ -30,11 +33,20 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
+            DisableComponents();
             audioSource.PlayOneShot(destroyAudio);
             Destroy(gameObject, destroyAudio.length);
             score.IncreasPoints();
             
         }
+    }
+
+    private void DisableComponents()
+    {
+        enemy.enabled = false;
+        boxCollider2D.enabled = false;
+        spriteRendererBody.enabled = false;
+        spriteRendererTurret.enabled = false;
     }
 
 
