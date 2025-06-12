@@ -186,6 +186,7 @@ MonoBehaviour:
   health: 100
   destroyAudio: {fileID: 8300000, guid: da0331133c6a958428bb4bb35ddb0f17, type: 3}
   audioSource: {fileID: 2989688240870425674}
+  enemy: {fileID: 5719676539180797840}
 --- !u!82 &2989688240870425674
 AudioSource:
   m_ObjectHideFlags: 0
@@ -197,7 +198,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
   Loop: 0

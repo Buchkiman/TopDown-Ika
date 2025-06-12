@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     [SerializeField] int health = 100;
     [SerializeField] AudioClip destroyAudio;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] Enemy enemy;
     Score score;
 
 
@@ -29,9 +30,10 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
-            //Destroy(gameObject);
-            score.IncreasPoints();
             audioSource.PlayOneShot(destroyAudio);
+            Destroy(gameObject, destroyAudio.length);
+            score.IncreasPoints();
+            
         }
     }
 
