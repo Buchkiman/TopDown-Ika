@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Spawner (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4207906643282751823, guid: 3e5ffba9b6acab648989b2a8397d8dbc, type: 3}
+      propertyPath: initialSpawnRate
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8724544010651402853, guid: 3e5ffba9b6acab648989b2a8397d8dbc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.93
@@ -271,6 +275,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &688259355 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7983622410794242534, guid: 7d858bfaee8d57c4f8aae388e994928c, type: 3}
+  m_PrefabInstance: {fileID: 445312348631703804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &714924845
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,8 +338,8 @@ SpriteRenderer:
   m_SortingLayerID: -1135969195
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 67befc46c31a3f54ebcbe40b063a5888, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -350,7 +359,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 42.5, y: 20, z: 1}
+  m_LocalScale: {x: 17, y: 9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -367,9 +376,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3888755935653769080, guid: 58ccb8e9b00705247806a6c9ee5a9d4f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5719676539180797840, guid: 58ccb8e9b00705247806a6c9ee5a9d4f, type: 3}
       propertyPath: speed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719676539180797840, guid: 58ccb8e9b00705247806a6c9ee5a9d4f, type: 3}
+      propertyPath: damage
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5719676539180797840, guid: 58ccb8e9b00705247806a6c9ee5a9d4f, type: 3}
       propertyPath: hitCount
@@ -637,6 +654,10 @@ PrefabInstance:
     - target: {fileID: 2759927441853490071, guid: 3e5ffba9b6acab648989b2a8397d8dbc, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207906643282751823, guid: 3e5ffba9b6acab648989b2a8397d8dbc, type: 3}
+      propertyPath: initialSpawnRate
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8724544010651402853, guid: 3e5ffba9b6acab648989b2a8397d8dbc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -935,6 +956,10 @@ PrefabInstance:
     - target: {fileID: 2759927441853490071, guid: 3e5ffba9b6acab648989b2a8397d8dbc, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207906643282751823, guid: 3e5ffba9b6acab648989b2a8397d8dbc, type: 3}
+      propertyPath: initialSpawnRate
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8724544010651402853, guid: 3e5ffba9b6acab648989b2a8397d8dbc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1444,7 +1469,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health: 0'
+  m_text: 'Health: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1654,6 +1679,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655698799}
   m_CullTransparentMesh: 1
+--- !u!212 &1697071065 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1141719675343670797, guid: 7d858bfaee8d57c4f8aae388e994928c, type: 3}
+  m_PrefabInstance: {fileID: 445312348631703804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1877201613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,13 +1831,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420031}
     - target: {fileID: 4037924443552821835, guid: 7d858bfaee8d57c4f8aae388e994928c, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037924443552821835, guid: 7d858bfaee8d57c4f8aae388e994928c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 445312348631703813}
+    - target: {fileID: 4037924443552821835, guid: 7d858bfaee8d57c4f8aae388e994928c, type: 3}
+      propertyPath: lossSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e555d20221d501c43b1182a475fa4c8f, type: 3}
+    - target: {fileID: 4037924443552821835, guid: 7d858bfaee8d57c4f8aae388e994928c, type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 1607350692}
+    - target: {fileID: 4037924443552821835, guid: 7d858bfaee8d57c4f8aae388e994928c, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 445312348631703812}
     - target: {fileID: 4037924443552821835, guid: 7d858bfaee8d57c4f8aae388e994928c, type: 3}
+      propertyPath: bulletSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b0788683b7c8d24187a4d2308465164, type: 3}
+    - target: {fileID: 4037924443552821835, guid: 7d858bfaee8d57c4f8aae388e994928c, type: 3}
       propertyPath: sceneLoader
       value: 
       objectReference: {fileID: 1257181388}
+    - target: {fileID: 4037924443552821835, guid: 7d858bfaee8d57c4f8aae388e994928c, type: 3}
+      propertyPath: boxCollider2D
+      value: 
+      objectReference: {fileID: 445312348631703811}
+    - target: {fileID: 4037924443552821835, guid: 7d858bfaee8d57c4f8aae388e994928c, type: 3}
+      propertyPath: spriteRendererBody
+      value: 
+      objectReference: {fileID: 688259355}
+    - target: {fileID: 4037924443552821835, guid: 7d858bfaee8d57c4f8aae388e994928c, type: 3}
+      propertyPath: spriteRendererTurret
+      value: 
+      objectReference: {fileID: 1697071065}
     - target: {fileID: 5238421150130491939, guid: 7d858bfaee8d57c4f8aae388e994928c, type: 3}
       propertyPath: m_Name
       value: Tank
@@ -1886,7 +1948,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445312348631703805}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 28b1baed269f5f8428a47da2a0600609, type: 2}
   m_CullingMode: 0
@@ -2067,6 +2129,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &445312348631703813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4037924443552821835, guid: 7d858bfaee8d57c4f8aae388e994928c, type: 3}
+  m_PrefabInstance: {fileID: 445312348631703804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445312348631703805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c962f6bec7be48d4e97d72ed6b0f569e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
